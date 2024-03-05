@@ -1,43 +1,4 @@
-<?php
-$insert=false;
-if(isset($_POST['name'])){
-
-
-
- $server="localhost";
- $username="root";
- $password="";
-
- $con=mysqli_connect($server,$username,$password);
-
- if(!$con){
-    die("connection to this database failed due to" .mysqli_connect_error());
- }
-//  echo "Success connecting  to the db";
-
- $name=$_POST['name'];
- $age=$_POST['age'];
- $gender=$_POST['gender'];
- $email=$_POST['email'];
- $phone=$_POST['phone'];
- $desc=$_POST['desc'];
-
-
- $sql="INSERT INTO `US_trip`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `desc`, `dt`) VALUES ( ' $name', ' $age', ' $gender', ' $email', ' $phone', ' $desc', current_timestamp());";
-
-//  echo $sql;
- if($con->query($sql)==true){
-    // echo "successfully inserted";
-    $insert=true;
- }
- else{
-    echo "ERROR: $sql <br> $con->error";
- }
- $con->close();
-}
-
-?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,11 +19,8 @@ if(isset($_POST['name'])){
     <div class="container">
         <h1>Welcome to IIT Madras US Trip form</h1>
         <p>Enter Your Details and submit this form to confirm your participation in the trip</p>
-        <?php
-        if($insert==true){
-        echo " <p id='green'>$name Thanks for submitting your form .we are happy to see you joining us for the US trip  </p>";
-        }
-       ?>
+        <p id="green">Thanks for submitting your form .we are happy to see you joining us for the US trip . </p>
+
         <form action="index.php" method="post">
 
             <input type="text" name="name" id="name" placeholder="Enter your Name">
@@ -82,4 +40,4 @@ if(isset($_POST['name'])){
 </body>
 
 
-</html>
+</html> -->
